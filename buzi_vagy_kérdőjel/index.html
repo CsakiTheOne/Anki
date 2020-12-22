@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Buzi vagy?</title>
+</head>
+<body>
+    <!--
+    <div class="theQuestion">
+        <h1>Buzi vagy?</h1>
+        <button id="btn1">Igen</button>
+        <button id="btn2">Nem</button>
+    </div>
+    -->
+    <div class="mouseMe">
+        <div onmouseover="mOver(this)" onmouseout="mOut(this)" 
+        style="background-color:#f06292; padding: 1cm; font-size: larger; color: #ad1457; padding: 2cm; width: 20%; border-radius: 16px; margin-left: 10cm;">
+        Húzd ide a kurzort!</div>
+
+        <script id="script">
+            function mOver(obj) {
+            obj.innerHTML = "Gratulálok, buzi lettél."
+            }
+
+            function mOut(obj) {
+            obj.innerHTML = "Húzd ide a kurzort!"
+            }
+        </script>
+
+        <br>
+        <br>        
+
+        <div onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color:#e91e63;padding: 1cm; font-size: larger; color: #880e4f;padding: 2cm; width: 20%; border-radius: 16px; margin-left: 26cm;">Kattints ide!</div>
+        <script>
+        function mUp(obj) {
+        obj.style.backgroundColor="#ad1457";
+        obj.style.color="white";
+        obj.innerHTML="Mostantól buzi vagy!";
+        }
+        </script>
+    </div>
+    <script src="javascript.js"></script>
+</body>
+</html>
