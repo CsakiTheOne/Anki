@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+:root {
+    --list-spacing-amount: 12px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -26,26 +30,31 @@ ul {
 }
 
 li {
-    padding: 8px;
+    padding: var(--list-spacing-amount);
     list-style: none;
+}
+
+li:hover {
+    background: rgba(255, 255, 255, .1);
 }
 
 li::after {
     content: '';
     display: block;
-    margin-left: -8px;
-    margin-top: 9px;
-    margin-bottom: -9px;
-    width: calc(100% + 16px);
+    margin-left: calc(0px - var(--list-spacing-amount));
+    margin-top: calc(var(--list-spacing-amount) + 1px);
+    margin-bottom: calc(-1px - var(--list-spacing-amount));
+    width: calc(100% + var(--list-spacing-amount) + var(--list-spacing-amount));
     height: 1px;
     background: rgba(255, 255, 255, .3);
 }
 
 a {
-    text-shadow: 0 0 6px rgba(0, 192, 255, 1);
+    text-shadow: -1px -1px 0px rgba(0, 192, 255, .7), 1px 1px 0px rgba(0, 192, 255, .7);
     text-decoration: none;
 }
 
 a:hover {
+    text-shadow: -2px -2px 0px rgba(0, 192, 255, .7), 2px 2px 0px rgba(0, 192, 255, .7);
     color: #CEF;
 }
