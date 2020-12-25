@@ -24,13 +24,13 @@ ul {
     display: inline-block;
     margin: 8px;
     background: #282828;
-    border-radius: 4px;
+    border-radius: 8px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, .3);
     overflow: hidden;
 }
 
 li {
-    padding: var(--list-spacing-amount);
+    padding: var(--list-spacing-amount) calc(var(--list-spacing-amount) * 2);
     list-style: none;
 }
 
@@ -41,12 +41,22 @@ li:hover {
 li::after {
     content: '';
     display: block;
-    margin-left: calc(0px - var(--list-spacing-amount));
+    margin-left: calc(0px - var(--list-spacing-amount) * 2);
     margin-top: calc(var(--list-spacing-amount) + 1px);
     margin-bottom: calc(-1px - var(--list-spacing-amount));
-    width: calc(100% + var(--list-spacing-amount) + var(--list-spacing-amount));
+    width: calc(100% + var(--list-spacing-amount) * 4);
     height: 1px;
     background: rgba(255, 255, 255, .3);
+}
+
+li.head {
+    background: #161616;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+li.head::after {
+    height: 2px;
 }
 
 a {
